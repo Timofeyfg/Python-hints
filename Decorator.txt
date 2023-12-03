@@ -1,0 +1,11 @@
+numbers = int(input("Введите число: "))
+def my_decorator(funk):
+    def wrapper():
+        print("______________________________")
+        funk()
+        print("______________________________")
+    return wrapper
+@my_decorator
+def say_hello():
+    print(f"Число: {numbers * 2}")
+say_hello()
