@@ -1,0 +1,392 @@
+print("Вас приветствует пиццерия: Вкусный язычок")
+print("Если вы хотите сделать заказ напишите: Заказ")
+order = input()
+if order == "Заказ":
+    order2 = int(input("Нажмите 1, если пеперони. Если куриную, нажмите 2. Или желаете всю в месте, нажмите 3: "))
+    if order2 == 1:
+        print("Вы выбрали пеперони.Заказ сделан")
+        naz = input("Хотите ли вы изменить начинку: Да/Нет ")
+        while naz == "Да":
+            print("Вся начинка: Колбасса, Помидоры")
+            n = "Колбасса, Помидоры"                  #Я не знаю как назвать переменную
+            old = input("Что хотите изменить в начинке: ")
+            new = input("Что хотите добавить: ")
+            new_old = n.replace(old, new)
+            print(new_old)
+            break
+        only = input("Как желаете оплатить Онлайн или Оффлайн: ")
+        if only == "Онлайн":
+            pay = int(input("Оплачивайте 600 рублей: "))
+            if pay == 600:
+                print(f"Сегодня у нас скидка 20%: {(600 / 100) * 80} ")
+                print("Заказ выполняется")
+                def my_decorator(funk):
+                    def wrapper():
+                        print("______________________________")
+                        funk()
+                        print("______________________________")
+                    return wrapper
+                @my_decorator
+                def check():
+                    print(f"Ваш чек на сумму {(600 / 100) * 80}  рублей")
+                check()
+            elif pay < 600:
+                print("Непрвильно ввели или недостаточно средств.")
+                pay2 = input("Попробуйте еще раз. (Да/Нет)")
+                if pay2 == "Да":
+                    pay6 = int(input("Оплачивайте 600 рублей: "))
+                    if pay6 == 600:
+                        print(f"Сегодня у нас скидка 20%: {(600 / 100) * 80} ")
+                        print("Заказ оформлен")
+                        def my_decorator(funk):
+                            def wrapper():
+                                print("______________________________")
+                                funk()
+                                print("______________________________")
+                            return wrapper
+                        @my_decorator
+                        def check():
+                            print(f"Ваш чек на сумму {(600 / 100) * 80}  рублей")
+                        check()
+                else:
+                    print("Досвидания")
+        elif only == "Оффлайн":
+            pay3 = int(input("Оплачивайте: "))
+            if pay3 >= 600:
+                print(f"Остаток: {pay3 - 600}")
+                print("Заказ оформлен")
+                def my_decorator(funk):
+                    def wrapper():
+                        print("______________________________")
+                        funk()
+                        print("______________________________")
+                    return wrapper
+                @my_decorator
+                def check():
+                    print(f"Ваш чек на сумму {pay3 - 600}  рублей")
+                check()
+            elif pay3 < 600:
+                print("Недостаточно средств")
+                attempt = int(input("Вы хотите попробовать еще раз? (Да/Нет)"))
+                if attempt == "Да":
+                    pay4 = int(input("Введите сумму: "))
+                    if pay4 >= 600:
+                        print(f"Остаток: {pay4 - 600}")
+                        print("Заказ оформлен")
+                        def my_decorator(funk):
+                            def wrapper():
+                                print("______________________________")
+                                funk()
+                                print("______________________________")
+                            return wrapper
+                        @my_decorator
+                        def check():
+                            print(f"Ваш чек на сумму {pay4 - 600}  рублей")
+                        check()
+                elif attempt == "Нет":
+                    print("Пока")
+        elif naz == "Нет":
+            only = input("Как желаете оплатить Онлайн или Оффлайн: ")
+            if only == "Онлайн":
+                pay = int(input("Оплачивайте 600 рублей: "))
+                if pay == 600:
+                    print(f"Сегодня у нас скидка 20%: {(600 / 100) * 80} ")
+                    print("Заказ выполняется")
+                    def my_decorator(funk):
+                        def wrapper():
+                            print("______________________________")
+                            funk()
+                            print("______________________________")
+                        return wrapper
+                    @my_decorator
+                    def check():
+                        print(f"Ваш чек на сумму {(600 / 100) * 80}  рублей")
+                    check()
+                elif pay < 600:
+                    print("Непрвильно ввели или недостаточно средств.")
+                    pay2 = input("Попробуйте еще раз. (Да/Нет)")
+                    if pay2 == "Да":
+                        pay6 = int(input("Оплачивайте 600 рублей: "))
+                        if pay6 == 600:
+                            print(f"Сегодня у нас скидка 20%: {(600 / 100) * 80} ")
+                            print("Заказ оформлен")
+                            def my_decorator(funk):
+                                def wrapper():
+                                    print("______________________________")
+                                    funk()
+                                    print("______________________________")
+                                return wrapper
+                            @my_decorator
+                            def check():
+                                print(f"Ваш чек на сумму {(600 / 100) * 80}  рублей")
+                            check()
+                    else:
+                        print("Досвидания")
+            elif only == "Оффлайн":
+                pay3 = int(input("Оплачивайте: "))
+                if pay3 >= 600:
+                    print(f"Остаток: {pay3 - 600}")
+                    print("Заказ оформлен")
+                    def my_decorator(funk):
+                        def wrapper():
+                            print("______________________________")
+                            funk()
+                            print("______________________________")
+                        return wrapper
+                    @my_decorator
+                    def check():
+                        print(f"Ваш чек на сумму {pay3 - 600}  рублей")
+                    check()
+                elif pay3 < 600:
+                    print("Недостаточно средств")
+                    attempt = int(input("Вы хотите попробовать еще раз? (Да/Нет)"))
+                    if attempt == "Да":
+                        pay4 = int(input("Введите сумму: "))
+                        if pay4 >= 600:
+                            print(f"Остаток: {pay4 - 600}")
+                            print("Заказ оформлен")
+                            def my_decorator(funk):
+                                def wrapper():
+                                    print("______________________________")
+                                    funk()
+                                    print("______________________________")
+                                return wrapper
+                            @my_decorator
+                            def check():
+                                print(f"Ваш чек на сумму {pay4 - 600}  рублей")
+                            check()
+                    elif attempt == "Нет":
+                        print("Пока")
+    elif order2 == 2:
+        print("Вы выбрали куриную.Заказ сделан")
+        naz = input("Хотите ли вы изменить начинку: Да/Нет ")
+        while naz == "Да":
+            print("Вся начинка: Колбасса, огурцы")
+            n = "Колбасса, огурцы"
+            old = input("Что хотите изменить в начинке: ")
+            new = input("Что хотите добавить: ")
+            new_old = n.replace(old, new)
+            print(f"Новые начинки: {new_old}")
+            break
+        only2 = input("Как желаете оплатить: Онлайн или Оффлайн")
+        if only2 == "Онлайн":
+            pay = int(input("Оплачивайте 500 рублей: "))
+            if pay == 500:
+                print(f"Сегодня у нас скидка 10%: {(500 / 100) * 90} ")
+                print("Заказ выполняется")
+                def my_decorator(funk):
+                    def wrapper():
+                        print("______________________________")
+                        funk()
+                        print("______________________________")
+                    return wrapper
+                @my_decorator
+                def check():
+                    print(f"Ваш чек на сумму {(500 / 100) * 90}  рублей")
+                check()
+            elif pay < 500:
+                print("Непрвильно ввели или недостаточно средств.")
+                pay2 = input("Попробуйте еще раз. (Да/Нет)")
+                if pay2 == "Да":
+                    pay6 = int(input("Оплачивайте 600 рублей: "))
+                    if pay6 == 500:
+                        print(f"Сегодня у нас скидка 10%: {(500 / 100) * 90} ")
+                        print("Заказ оформлен")
+                        def my_decorator(funk):
+                            def wrapper():
+                                print("______________________________")
+                                funk()
+                                print("______________________________")
+                            return wrapper
+                        @my_decorator
+                        def check():
+                            print(f"Ваш чек на сумму {(500 / 100) * 90}  рублей")
+                        check()
+                else:
+                    print("Досвидания")
+        elif only2 == "Оффлайн":
+            pay3 = int(input("Оплачивайте: "))
+            if pay3 >= 500:
+                print(f"Остаток: {pay3 - 500}")
+                print("Заказ оформлен")
+                def my_decorator(funk):
+                    def wrapper():
+                        print("______________________________")
+                        funk()
+                        print("______________________________")
+                    return wrapper
+                @my_decorator
+                def check():
+                    print(f"Ваш чек на сумму {pay3 - 500}  рублей")
+                check()
+            elif pay3 < 500:
+                print("Недостаточно средств")
+                attempt = int(input("Вы хотите попробовать еще раз? Да/Нет"))
+                if attempt == "Да":
+                    pay4 = int(input("Введите сумму: "))
+                    if pay4 == 500:
+                        print(f"Остаток: {pay4 - 500}")
+                        print("Заказ оформлен")
+                        def my_decorator(funk):
+                            def wrapper():
+                                print("______________________________")
+                                funk()
+                                print("______________________________")
+                            return wrapper
+                        @my_decorator
+                        def check():
+                            print(f"Ваш чек на сумму {pay4 - 500}  рублей")
+                        check()
+        elif naz == "Нет":
+            only2 = input("Как желаете оплатить: Онлайн или Оффлайн")
+            if only2 == "Онлайн":
+                pay = int(input("Оплачивайте 500 рублей: "))
+                if pay == 500:
+                    print(f"Сегодня у нас скидка 10%: {(500 / 100) * 90} ")
+                    print("Заказ выполняется")
+                    def my_decorator(funk):
+                        def wrapper():
+                            print("______________________________")
+                            funk()
+                            print("______________________________")
+                        return wrapper
+                    @my_decorator
+                    def check():
+                        print(f"Ваш чек на сумму {(500 / 100) * 90}  рублей")
+                    check()
+                elif pay < 500:
+                    print("Непрвильно ввели или недостаточно средств.")
+                    pay2 = input("Попробуйте еще раз. (Да/Нет)")
+                    if pay2 == "Да":
+                        pay6 = int(input("Оплачивайте 500 рублей: "))
+                        if pay6 == 500:
+                            print(f"Сегодня у нас скидка 10%: {(500 / 100) * 90} ")
+                            print("Заказ оформлен")
+                            def my_decorator(funk):
+                                def wrapper():
+                                    print("______________________________")
+                                    funk()
+                                    print("______________________________")
+                                return wrapper
+                            @my_decorator
+                            def check():
+                                print(f"Ваш чек на сумму {(500 / 100) * 90}  рублей")
+                            check()
+                    else:
+                        print("Досвидания")
+            elif only2 == "Оффлайн":
+                pay3 = int(input("Оплачивайте: "))
+                if pay3 >= 500:
+                    print(f"Остаток: {pay3 - 500}")
+                    print("Заказ оформлен")
+                    def my_decorator(funk):
+                        def wrapper():
+                            print("______________________________")
+                            funk()
+                            print("______________________________")
+                        return wrapper
+                    @my_decorator
+                    def check():
+                        print(f"Ваш чек на сумму {pay3 - 500}  рублей")
+
+
+                    check()
+                elif pay3 < 500:
+                    print("Недостаточно средств")
+                    attempt = int(input("Вы хотите попробовать еще раз? Да Нет"))
+                    if attempt == "Да":
+                        pay4 = int(input("Введите сумму: "))
+                        if pay4 == 500:
+                            print(f"Остаток: {pay4 - 500}")
+                            print("Заказ оформлен")
+                            def my_decorator(funk):
+                                def wrapper():
+                                    print("______________________________")
+                                    funk()
+                                    print("______________________________")
+                                return wrapper
+                            @my_decorator
+                            def check():
+                                print(f"Ваш чек на сумму {pay4 - 500}  рублей")
+                            check()
+    if order2 == 3:
+        print("Вы хотите всё вместе это стоит 1300 рублей")
+        naz = input("Хотите ли вы изменить начинку: (Да/Нет) ")
+        while naz == "Да":
+            print("Вся начинка: Колбасса, помидоры, огурцы")
+            n = "Колбасса, помидоры, огурцы"
+            old = input("Что хотите изменить в начинке: ")
+            new = input("Что хотите добавить: ")
+            new_old = n.replace(old, new)
+            print(f"Новые начинки: {new_old}")
+            break
+        only3 = input("Выбирите способ оплаты: Онлайн или Оффлайн ")
+        if only3 == "Онлайн":
+            pay7 = int(input("К оплате 1300: "))
+            if pay7 == 1300:
+                print(f"Сегодня у нас скидка 50%: {(1300 / 100) * 50} ")
+                print("Заказ оформлен")
+                def my_decorator(funk):
+                    def wrapper():
+                        print("______________________________")
+                        funk()
+                        print("______________________________")
+                    return wrapper
+                @my_decorator
+                def check():
+                    print("Ваш чек на сумму 650 рублей")
+                check()
+            elif pay7 < 1300:
+                print("Недостаточно средств")
+                attempt2 = int(input("Порробуйте еще раз: (Да/Нет)"))
+                if attempt2 == "Да":
+                    pay7 = int(input("Попробуйте еще раз оплатить: "))
+                    if pay7 == 1300:
+                        print(f"Сегодня у нас скидка 50%: {(1300 / 100) * 50} ")
+                        print("Заказ оформлен")
+                        def my_decorator(funk):
+                            def wrapper():
+                                print("______________________________")
+                                funk()
+                                print("______________________________")
+                            return wrapper
+                        @my_decorator
+                        def check():
+                            print("Ваш чек на сумму 650 рублей")
+                        check()
+                else:
+                    print("Досвидания")
+        elif only3 == "Оффлайн":
+            pay7 = int(input("К оплате 1300: "))
+            if pay7 >= 1300:
+                print(f"Остаток: {pay7 - 1300}")
+                def my_decorator(funk):
+                    def wrapper():
+                        print("______________________________")
+                        funk()
+                        print("______________________________")
+                    return wrapper
+                @my_decorator
+                def check():
+                    print(f"Ваш чек на сумму {pay7 - 1300} рублей")
+                check()
+            elif pay7 < 1300:
+                print("Недостаточно средств")
+                attempt3 = int(input("Попробуйте еще раз: (Да/Нет)"))
+                if attempt3 == "Да":
+                    if pay7 == 1300:
+                        print("Заказ оформлен")
+                        def my_decorator(funk):
+                            def wrapper():
+                                print("______________________________")
+                                funk()
+                                print("______________________________")
+                            return wrapper
+                        @my_decorator
+                        def check():
+                            print("Ваш чек на сумму 1300 рублей")
+                        check()
+                    else:
+                        print("ИДи от сюда")
+                elif attempt3 == "Нет":
+                    print("Всего хорошего")
