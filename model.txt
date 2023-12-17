@@ -1,0 +1,33 @@
+mach_inventory = []
+users_info = []
+
+
+def add_mach(model):
+    mach = {'model': model}
+    mach_inventory.append(mach)
+
+def remove_users(users_2, users):
+    if users_info != users:
+        removed = users_info.pop()
+        removed = users_info.append(users_2)
+        return removed
+    else:
+        return None
+
+
+def add_rezer(users):
+    if users != ():
+       add_rezered = users_info.append(users)
+       return add_rezered
+    elif users == ():
+        return users
+
+def remove_mach(index):
+    if 0 <= index <= len(mach_inventory):
+        removed_mach = mach_inventory.pop(index)
+        return removed_mach
+    else:
+        return None
+
+def get_all_mach():
+    return mach_inventory
