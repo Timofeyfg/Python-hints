@@ -1,0 +1,26 @@
+def display_menu():
+    print("1. Зарезервировать авто")
+    print("2. Изменить имя от резервирования")
+    print("3. Посмотреть все жиГУЛИ")
+    print("4. Купить жиГУЛЬ")
+    print("5. Не потянуть жиГУЛЬ")
+    print("6. Выйти")
+
+def display_all_mach(mach_inventory):
+    print("Есть модели, как 2101, 2102, 2109")
+    for i, mach in enumerate(mach_inventory):
+        print(f"{i+1}. {mach['model']}")
+
+def display_add_users(users_info):
+        print(f"{users_info}")
+
+def display_remove_users(users_2):
+    print(f"Имя: {users_2}, зарезервирован ")
+
+def display_success(message):
+    print(f"Успешно, жигули получишь: {message}")
+
+
+
+def display_error(message):
+    print(f"Ошибка, жигули не получишь: {message}")

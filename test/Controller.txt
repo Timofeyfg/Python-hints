@@ -1,0 +1,49 @@
+from model import add_mach, remove_mach, get_all_mach, add_rezer, remove_users
+from view import display_menu, display_all_mach, display_success, display_error, display_add_users, display_remove_users
+
+def main():
+    while True:
+        display_menu()
+
+        choice = input("Выберите действие (1-5): ")
+        if choice == "1":
+            while add_rezer:
+                users = input("Введите своё имя: ")
+                add_rezer(users)
+                display_add_users(f"Дoбавленно имя: {users}. В очередь")
+                break
+
+                add_rezer(users)
+                display_add_users(f"Без имени")
+
+        elif choice == "2":
+            users_2 = input("Введите новое имя: ")
+            remove_users(users_2, users)
+            display_remove_users(f"{users_2}")
+        elif choice == "3":
+            display_all_mach(get_all_mach())
+
+        elif choice == "4":
+            model = input("Введите модель жигули: ")
+
+            add_mach(model)
+            print(f"Ваш авто: {model}")
+            display_success(f"Жигуль успешно добавлена на имя: {users}")
+
+        elif choice == "5":
+            index = int(input("Введите жигуль: "))
+            removed_mach = remove_mach(index)
+
+            if removed_mach:
+                display_success(f"Жигуль {removed_mach['model']} удалена.")
+                print(f"Ваш авто: {index}")
+            else:
+                display_error("Иди лечись")
+        elif choice == "6":
+            print("Выход из программы.")
+            break
+        else:
+            display_error("")
+
+if __name__ == "__main__":
+    main()
