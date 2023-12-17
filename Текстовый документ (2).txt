@@ -1,0 +1,5 @@
+import pandas as pd
+df = pd.read_csv('ascac.csv', delimiter=";", names=['user_age', 'user_name'])
+
+
+print(df)
