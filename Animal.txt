@@ -1,0 +1,10 @@
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+class rabbit(Animal):
+    def dark(self):
+        print(f"{self.name} is good")
+my_rabbit = rabbit("zucchini")
+print(f"Моё домашние животное под именем {my_rabbit.name}")
+my_rabbit.dark()
