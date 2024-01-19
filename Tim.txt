@@ -1,0 +1,10 @@
+user_name;user_surname;country;age;high
+Danil;X3;Russian;130;167
+Timofey;Ruban;USA;13;144
+il;eeee;USA;114;124
+German;Gadenov;KANADA;141;535
+Ece;Virvich;RUSSIAN;14;453
+Ivan;Pimened;X3;414;422
+Artem;Sorocind;USA;14;244
+Kiril;sfgfs;RUSSAN;;133
+Vlad;sgssf;X3;1;323

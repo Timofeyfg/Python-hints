@@ -1,0 +1,5 @@
+import pandas as pd
+df = pd.read_csv('Tim.csv', delimiter=";", names=['user_name', 'user_surname', 'country', 'age', 'high'])
+print(df)
+----------------------------------------------------------------------------------------------------------
+Tim.csv
