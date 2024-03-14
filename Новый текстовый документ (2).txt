@@ -1,0 +1,96 @@
+Контроллер: 
+from model import  add_rezer, cal, Plo,  S,  St, st, Kyb, kyb
+from view import display_menu, display_all_mach,  display_error, display_S, display_St, display_kyb
+
+def main():
+    while True:
+        display_menu()
+
+        choice = input("Выберите действие (1-5): ")
+        if choice == "1":
+            one_numbers = int(input("Введите 1 число: "))
+            two_numbers = int(input('Введите 2 число: '))
+            action = int(input('Выберите действие: '))
+            add_rezer(one_numbers, two_numbers, action)
+
+            display_all_mach(cal)
+        if choice == "2":
+            one_i = int(input('Введите первую велечину: '))
+            two_i = int(input('Введите вторую велечину: '))
+            Plo(one_i, two_i)
+
+            display_S(S)
+
+        if choice == "3":
+            one = int(input('Введите число: '))
+            St(one)
+
+            display_St(st)
+
+        if choice == "4":
+            onekyb = int(input('Введите число: '))
+            Kyb(onekyb)
+
+            display_kyb(kyb)
+        if choice == '5':
+            break
+        if choice > "5":
+            display_error('')
+
+if __name__ == "__main__":
+    main()
+Модель:
+cal = []
+S = []
+st = []
+kyb = []
+
+
+
+def add_rezer(one_numbers, two_numbers, action):
+    if action == 1:
+        cal.append(one_numbers + two_numbers)
+    if action == 2:
+        cal.append(one_numbers - two_numbers)
+    if action == 3:
+        cal.append(one_numbers * two_numbers)
+    if action == 4:
+        cal.append(one_numbers / two_numbers)
+    if action > 4:
+        print('Ошибка')
+    return cal
+
+
+def Plo(one_i, two_i):
+    S.append(one_i * two_i)
+    return S
+
+
+
+def St(one):
+    st.append(one**2)
+    return st
+
+
+
+def Kyb(onekyb):
+    kyb.append(onekyb**3)
+    return kyb
+view:
+def display_menu():
+    print("1. Калькулятор")
+    print("2. Площадь")
+    print("3. Возведение в степень")
+    print("4. Куб")
+    print("5. Выйти")
+
+
+def display_all_mach(cal):
+    print('Число:', cal)
+def display_S(S):
+    print(*S, 'см^2 / м^2')
+def display_St(st):
+    print('Число:', *st)
+def display_kyb(kyb):
+    print('Куб числа:', *kyb)
+
