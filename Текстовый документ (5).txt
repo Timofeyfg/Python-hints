@@ -1,0 +1,119 @@
+контроллер
+from model import *
+from view import *
+def main():
+    while True:
+        display_menu()
+
+        choice = input("Выберите действие (1-5): ")
+        if choice == "1":
+            class Cal:
+                try:
+                    def __init__(self, one_numbers, two_numbers, action):
+                        self.one_numbers = one_numbers
+                        self.two_numbers = two_numbers
+                        self.action = action
+                    def cal(self):
+                        return model(one_numbers, two_numbers, action)
+
+                except ValueError:
+                    print('ТЫ инвадид')
+            a = Cal()
+            b = a.cal()
+            print(b)
+
+            display_all_mach(cal)
+        if choice == "2":
+            try:
+                one_i = int(input('Введите первую велечину: '))
+                two_i = int(input('Введите вторую велечину: '))
+                Plo(one_i, two_i)
+
+                display_S(S)
+            except ValueError:
+                break
+
+        if choice == "3":
+            try:
+                one = int(input('Введите число: '))
+                St(one)
+
+                display_St(st)
+            except ValueError:
+                break
+
+        if choice == "4":
+            try:
+                onekyb = int(input('Введите число: '))
+                Kyb(onekyb)
+
+                display_kyb(kyb)
+            except ValueError:
+                break
+        if choice == '5':
+            break
+        if choice > "5":
+            display_error('')
+if __name__ == "__main__":
+    main()
+модель
+сal = []
+S = []
+st = []
+kyb = []
+
+
+class model:
+    def add_rezer(self, one_numbers, two_numbers, action):
+        self.one
+
+
+c_numbers = one_numbers
+        self.two_numbers = two_numbers
+        self.action = action
+    def count(self):
+        if self.action == 1:
+            return self.one_numbers + self.two_numbers
+        if self.action == 2:
+            return self.one_numbers - self.two_numbers
+        if self.action == 3:
+            return self.one_numbers * self.two_numbers
+        if self.action == 4:
+            return self.one_numbers % self.two_numbers
+
+
+
+def Plo(one_i, two_i):
+    S.append(one_i * two_i)
+    return S
+
+
+
+def St(one):
+    st.append(one**2)
+    return st
+
+
+
+def Kyb(onekyb):
+    kyb.append(onekyb**3)
+    return kyb
+view
+def display_menu():
+    print("1. Калькулятор")
+    print("2. Площадь")
+    print("3. Возведение в степень")
+    print("4. Куб")
+    print("5. Выйти")
+
+
+def display_all_mach(cal):
+    print('Число:', cal)
+def display_S(S):
+    print(*S, 'см^2 / м^2')
+def display_St(st):
+    print('Число:', *st)
+def display_kyb(kyb):
+    print('Куб числа:', *kyb)
+def display_error(message):
+    print('Ошибка')
