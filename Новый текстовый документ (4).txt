@@ -1,0 +1,57 @@
+Контроллер: 
+import time
+from model import save
+import flet as ft
+from flet_core import page
+
+from view import View
+
+
+
+
+
+
+
+
+
+def start_page(page: ft.Page):
+    page.title = "Регистрация"
+    page.window_width = 400
+    page.window_height = 600
+    page.window_resizable = True
+    page.update()
+
+    first_name = ft.TextField(value='0', label="Имя (необязательное поле)", autofocus=True)
+    last_name = ft.TextField(label="Фамилия (необязательное поле)")
+    greetings = ft.Column()
+    save(first_name)
+
+    page.add(
+        first_name,
+        last_name,
+        ft.ElevatedButton('Начать', on_click=save)
+
+     )
+
+
+
+if __name__ == "__main__":
+    ft.app(target=start_page)
+модель
+
+
+import flet as ft
+from flet_core import page
+l = []
+    
+def save(first_name):
+    first_name.value = str(first_name.value)
+
+
+
+    l.append(first_name.value)
+    txt_file = open('file.txt', 'w')
+    m = str(l)
+    txt_file.write(m)
+    txt_file.close()
+    page.update()
