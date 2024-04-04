@@ -1,0 +1,65 @@
+Полиморфизм: 
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+    def info_life(self):
+        print(f'Я {self.name} по фамилии {self.surname}')
+    def make_life(self):
+        print('Хочу спать')
+class Person:
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+    def info_life(self):
+        print(f'Я {self.name} по фамилии {self.surname} ')
+    def make_life(self):
+        print('Хочу спать2')
+person = Life('Timofey', 'Ruban')
+person2 = Person('Alex', 'A')
+for person in (person, person2):
+    person.info_life()
+    person.make_life()
+Наследование: class Person:
+    def __init__(self, name, surname):
+        self.name = name
+        self.surname = surname
+class Worker(Person):
+    def worker_info(self):
+        print(f'Имя работяги: {self.name}, Фамилия работяги: {self.surname}')
+
+work = Worker('Г0еоргий', 'ЭЭЭЭЭЭЭЭ')
+work.worker_info()                                                     
+Инкапсуляция:
+class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+    @property
+    def name(self):
+        return self.__name
+    @name.setter
+    def name(self, name):
+        if 0< len(name) < 10:
+            self.__name = name
+        else:
+            print('Пиши имя нормально')
+
+    @property
+    def age(self):
+        return self.__age
+
+    @age.setter
+    def age(self, age):
+        if 0 < age < 100:
+            self.__age = age
+        else:
+            print('Пиши возраст нормально')
+    def print(self):
+        print(f'Имя: {self.__name}, Возраст: {self.__age}')
+person = Person('Tim', 13)
+person.print()
+person.name = 'ddhffhfhvdhdfhdfhgdhgdhgdhghgfh'
+person.age = 100
+person.name = 'Timofey'
+person.age = 14
+person.print()                             
